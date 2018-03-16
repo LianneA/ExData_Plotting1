@@ -1,5 +1,5 @@
 ##Reading CSV
-df<- read.csv("household_power_consumption.txt", header=T, sep=';')
+df<- read.csv("household_power_consumption.txt", header=T, sep=';',na.strings="?")
 ##Filtering data from date 1/2/2007 to 2/2/2007
 dfsub <-subset(df, Date %in% c("1/2/2007","2/2/2007"))
 
@@ -16,5 +16,5 @@ lines(dt, submeter3, type = "l", col = "blue" )
 legend("topright", lty= 1, col = c("Black", "red", "blue"), legend = c( "Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 ##saving plot as plot3.png
-dev.copy(png,"plot9.png", width=480, height=480)
+dev.copy(png,"plot3.png", width=480, height=480)
 dev.off()

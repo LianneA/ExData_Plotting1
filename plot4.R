@@ -1,5 +1,5 @@
 ##Reading CSV
-df<- read.csv("household_power_consumption.txt", header=T, sep=';')
+df<- read.csv("household_power_consumption.txt", header=T, sep=';',na.strings="?")
 
 ##Filtering data from date 1/2/2007 to 2/2/2007
 dfsub <-subset(df, Date %in% c("1/2/2007","2/2/2007"))
@@ -26,5 +26,5 @@ plot(dt, dfvolt, type="l", xlab="datetime", ylab="Voltage")
 plot(dt, dfreactive, type="l", xlab="Datetime", ylab="Global_reactive_power")
 
 ##saving plot as plot4.png
-dev.copy(png,"plot9.png", width=480, height=480)
+dev.copy(png,"plot4.png", width=480, height=480)
 dev.off()
